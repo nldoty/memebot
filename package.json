@@ -1,0 +1,11 @@
+{
+  "name": "meme-bot",
+  "version": "1.0.0",
+  "description": "A bot for the memes",
+  "main": "main.js",
+  "author": "Nick Doty",
+  "dependencies": {
+    "discord.io": "https://github.com/woor/discord.io/tarball/gateway_v6",
+    "winston": "^3.2.1"
+  }
+}
