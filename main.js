@@ -17,13 +17,24 @@ bot.on('ready', function (evt) {
     logger.info(bot.username + ' - (' + bot.id + ')');
 });
 bot.on('message', (message) => {
-    if (message.content === 'bruh') {
+    if (message.content.toLowerCase() === 'bruh') {
         message.channel.send('_bruh_');
     }
 });
 
 bot.on('message', (message) => {
-    logger.info(message);
-})
+    if (message.content.includes('69')) {
+        message.react('🇳');
+        message.react('🇮');
+        message.react('🇨');
+        message.react('🇪');
+    }
+});
+
+bot.on('message', (message) => {
+    if (message.content.toLowerCase().includes('mario')) {
+        message.react('696169726971478107');
+    }
+});
 
 bot.login(auth.token);
