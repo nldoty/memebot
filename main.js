@@ -18,6 +18,7 @@ bot.on('ready', function (evt) {
 });
 bot.on('message', (message) => {
     if (message.content.toLowerCase() === 'bruh') {
+        message.react('720857029723291748');
         message.channel.send('_bruh_');
     }
 });
