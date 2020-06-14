@@ -1,8 +1,7 @@
-
 const Discord = require('discord.js');
 const logger = require('winston');
 const auth = require('./auth.json');
-// Configure logger settings
+const helpers = require('./helpers');
 logger.remove(logger.transports.Console);
 logger.add(new logger.transports.Console, {
     colorize: true
@@ -24,7 +23,8 @@ bot.on('message', (message) => {
 });
 
 bot.on('message', (message) => {
-    if (message.content.includes('69')) {
+    let content = helpers.strip(message.content);
+    if (content.includes('69')) {
         message.react('🇳');
         message.react('🇮');
         message.react('🇨');
@@ -33,7 +33,8 @@ bot.on('message', (message) => {
 });
 
 bot.on('message', (message) => {
-    if (message.content.toLowerCase().includes('mario')) {
+    let content = helpers.strip(message.content);
+    if (content.toLowerCase().includes('mario')) {
         message.react('696169726971478107');
     }
 });
